@@ -25,5 +25,3 @@ function moverCarrusel() {
     const desplazamiento = -(indiceActual * (100 / ofertasVisibles)); // Asegurar que solo se desplacen 4 ofertas
     ofertas.style.transform = `translateX(${desplazamiento}%)`;
 }
-
-
