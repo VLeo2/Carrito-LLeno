@@ -292,3 +292,15 @@ header {
     font-size: 1em;
     color: #333;
 }
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .oferta {
+        width: calc(50% - 10px); /* Mostrar 2 cuadros por fila en pantallas pequeñas */
+    }
+}
+
+.producto h3 {
+    margin: 10px 0 0;
+    font-size: 1em;
+    color: #333;
+}
