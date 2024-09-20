@@ -11,7 +11,6 @@
         <div id="logo">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfrqrRCGhINF8KLMb-8_fFMAIfi2vsU1JjrQ&s" alt="Logo Supermercado">
         </div>
-    </div>
     <div id="buscador">
         <input type="text" placeholder="Buscar productos...">
         <button>Buscar</button>
@@ -28,7 +27,7 @@
 
 <div class="container">
     <div id="franja-ofertas">
-        <a href="#seccion-ofertas">Ofertas del momento</a>
+        <h2>Ofertas del momento</h2>
     </div>
 </div>
 
@@ -74,7 +73,7 @@
 </div>
 
 <div class="container">
-    <div class="franja-negra-categorias">
+    <div id="franja-categorias">
         <h2>Categorías</h2>
     </div>
 </div>
@@ -82,12 +81,13 @@
 <div class="container">
     <div class="categorias-container">
     <!-- Enlace a la página de productos de Alimentos -->
-<a href="alimentos.html" class="categoria">
-    <div class="front">Alimentos</div>
-    <div class="back">
-        <img src="Images/alimentos.png" alt="Alimentos">
-    </div>
-</a>
+    <a href="alimentos.html" class="categoria">
+        <div class="front">Alimentos</div>
+        <div class="back">
+            <img src="Images/alimentos.png" alt="Alimentos">
+        </div>
+    </a>
+    
 
     <a href="#confites" class="categoria">
         <div class="front">Confites</div>
@@ -132,8 +132,23 @@
         </div>
     </a>
 </div>
+<a href="javascript:void(0);" onclick="volverAPaginaPrincipal()">
+    <img src="logo.png" alt="Logo" id="logo">
+</a>
+
+<script>
+function volverAPaginaPrincipal() {
+    const currentUrl = window.location.href;
+    if (currentUrl.includes('alimentos.html')) {
+        window.location.href = 'index.html'; // Redirige a la página principal
+    } else {
+        location.reload(); // Recarga la página si ya estás en la principal
+    }
+}
+</script>
 
 <script src="carrusel.js"></script>
 </body>
 </html>
+
 
