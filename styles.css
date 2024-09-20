@@ -10,6 +10,7 @@ body {
 .container {
     margin: 0 20px; /* Margen de 20px en los laterales */
 }
+
 /* Franja roja del encabezado */
 header {
     display: flex;
@@ -18,28 +19,69 @@ header {
     background-color: red;
     padding: 10px 20px;
 }
-/* Ajustes para la franja de ofertas y las categorías */
-#franja-ofertas, .franja-negra-categorias {
-    background-color: black;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: 10px; /* Espacio entre franjas */
+
+/* Estilos comunes para las franjas */
+#franja-ofertas, #franja-categorias {
+    padding: 10px 0; /* Ajusta el padding vertical */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black; /* Mantén el color negro */
 }
+
+/* Estilos para los títulos dentro de las franjas */
+#franja-ofertas h2, #franja-categorias h2 {
+    font-size: 22px; /* Ajusta el tamaño de las letras */
+    margin: 0; /* Elimina los márgenes de los encabezados */
+    line-height: 1.2;
+    color: white;
+}
+
+/* Margen inferior para las franjas */
+#franja-ofertas, #franja-categorias {
+    margin-bottom: 10px; /* Añade margen inferior para separar las franjas de su contenido */
+}
+/* Margen entre el carrusel de ofertas y la franja de categorías */
+.ofertas-contenido {
+    margin-bottom: 20px; /* Margen inferior del carrusel de ofertas */
+}
+
+/* Ajuste de la franja de categorías */
+#franja-categorias {
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    margin-top: 20px; /* Margen superior para separar de las ofertas */
+}
+
+/* Margen entre la franja de categorías y su contenido */
+.categorias-contenido {
+    margin-top: 20px; /* Espacio entre la franja negra y las categorías */
+}
+
 /* Logo */
 #logo img {
     max-height: 90px;
     width: auto;
 }
+.logo {
+    width: 90px; /* Ajusta este tamaño según tus necesidades */
+    height: auto; /* Mantén la proporción original del logo */
+    max-width: 100%; /* No permita que el logo se agrande más allá del contenedor */
+}
+
 /* Ajustar el buscador */
 #buscador {
     display: flex;
     align-items: center;
-    margin-right: 15px; /* Separación con el botón de Locales */
-    flex-grow: 0.3; /* Alargar el buscador */
+    margin-right: 15px;
+    flex-grow: 0.3;
 }
+
 #buscador input {
-    flex-grow: 1; /* Hacer que el input crezca según el espacio disponible */
+    flex-grow: 1;
     padding: 8px;
     border-radius: 10px;
     border: 1px solid #ccc;
@@ -54,18 +96,20 @@ header {
     color: white;
     cursor: pointer;
 }
+
 /* Ajustar el espacio entre el buscador y los botones */
 .info-buttons {
     display: flex;
-    gap: 15px; /* Espacio entre los botones */
+    gap: 15px;
 }
+
 /* Franja negra de ofertas */
 #franja-ofertas {
     background-color: black;
     color: white;
     text-align: center;
     padding: 15px;
-    margin-top: 10px; /* Espacio entre franjas */
+    margin-top: 10px;
 }
 
 #franja-ofertas a {
@@ -80,8 +124,12 @@ header {
     align-items: center;
     justify-content: space-between;
     position: relative;
-    padding: 0 20px; /* Ajuste para que las flechas queden al límite */
-    margin-top: 20px;
+    padding: 0 20px; 
+    margin-top: 10px; /* Ajuste de margen */
+}
+.carrusel-contenedor {
+    position: relative;
+    overflow: hidden; /* Asegura que el carrusel no tenga margen interno */
 }
 
 /* Estilos para las ofertas */
@@ -93,62 +141,59 @@ header {
 .ofertas {
     display: flex;
     transition: transform 0.3s ease-in-out;
-    width: calc(25% * 4); /* Asegura que el contenedor sea lo suficientemente ancho para manejar 4 ofertas visibles a la vez */
+    width: calc(25% * 4); 
 }
 
 .oferta {
     background-color: yellow;
     padding: 20px;
-    margin-right: 10px; /* Espacio entre cuadros */
-    width: calc(25% - 10px); /* Cada cuadro ocupa el 25% del ancho menos el margen */
+    margin-right: 10px; 
+    width: calc(25% - 10px);
     box-sizing: border-box;
     text-align: center;
-    flex-shrink: 0; /* Evita que las ofertas se ajusten si hay más de 4 */
+    flex-shrink: 0;
 }
 
 .oferta img {
     max-width: 100%;
-    height: auto;
+    height: 200px; /* Mantener un tamaño uniforme */
+    object-fit: cover;
 }
 
-/* Flechas */
+/* Flechas del carrusel en el borde */
 .flecha {
-    background-color: transparent; /* Fondo transparente por defecto */
+    background-color: transparent;
     color: black;
     border: none;
     cursor: pointer;
+    font-size: 24px;
     position: absolute;
-    top: 0;
-    bottom: 0; /* Ocupar toda la altura de los cuadros */
-    width: 40px;
+    top: 50%; /* Alinea verticalmente en el centro */
+    transform: translateY(-50%);
     z-index: 10;
+    width: 40px; /* Ancho de la flecha */
+    height: 40px; /* Alto de la flecha */
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background-color 0.3s ease; /* Suavizado para el cambio de color */
+    transition: background-color 0.3s ease;
+    padding: 0; /* Sin padding adicional */
 }
 
 #flecha-izquierda {
-    left: 0; /* Alinear con el margen izquierdo */
+    left: 0; /* Ajusta a 0 para que esté en el borde exacto */
+    margin-left: -18px; /* Empuja ligeramente al borde si es necesario */
 }
 
 #flecha-derecha {
-    right: 0; /* Alinear con el margen derecho */
+    right: 0; /* Ajusta a 0 para que esté en el borde exacto */
+    margin-right: -10px; /* Empuja ligeramente al borde si es necesario */
 }
 
-/* Efecto hover para las flechas */
+/* Efecto hover */
 .flecha:hover {
     background-color: rgba(211, 211, 211, 0.7); /* Fondo gris claro al pasar el mouse */
-    border-radius: 5px;
-}
-/* Franja negra debajo de las ofertas */
-.franja-negra-categorias {
-    background-color: black;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    margin-top: 20px; /* Espacio de separación con las ofertas */
-    margin-bottom: 20px; /* Espacio de separación antes de los cuadros rojos */
+    border-radius: 50%; /* Hacer que la flecha tenga un borde redondeado */
 }
 
 /* Contenedor de categorías */
@@ -156,64 +201,88 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 10px;
+    gap: 15px; /* Aumenta el espacio entre los cuadros */
     margin-bottom: 20px;
 }
 
 /* Cuadros de categorías interactivos */
 .categoria {
     position: relative;
-    width: calc(33.333% - 10px);
-    height: 200px; /* Para que sean cuadros */
-    perspective: 1000px; /* Efecto 3D para giro */
-    text-decoration: none; /* Quitar subrayado */
+    width: calc(33.333% - 15px); /* Ajusta el ancho para 3 cuadros por fila con más espacio */
+    height: 200px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    z-index: 1;
+    border-radius: 15px; /* Bordes redondeados */
 }
 
-.categoria .front,
+/* Efecto hover para agrandar y superponer el cuadro */
+.categoria:hover {
+    transform: scale(1.2);
+    z-index: 2; /* Asegura que el cuadro agrandado esté por encima de los otros */
+}
+
+/* Parte frontal del cuadro (texto) */
+.categoria .front {
+    background-color: rgba(255, 0, 0, 0.8); /* Fondo rojo con transparencia */
+    color: white;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    border-radius: 15px; /* Bordes redondeados en la parte frontal también */
+    transition: opacity 0.3s ease;
+}
+
+/* Parte trasera del cuadro (imagen) */
 .categoria .back {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    backface-visibility: hidden;
-    transition: transform 0.6s;
-    border-radius: 10px;
+    z-index: 1;
+    border-radius: 15px; /* Bordes redondeados también en la parte trasera */
+    overflow: hidden; /* Para asegurarse de que la imagen no se salga de los bordes redondeados */
 }
 
-.categoria .front {
-    background-color: red;
-    color: white;
-    font-size: 20px;
-}
-
-.categoria .back {
-    background-color: white;
-    transform: rotateY(180deg); /* Inicialmente oculta la imagen */
-}
-.categoria img {
+.categoria .back img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Hace que la imagen se ajuste sin distorsión */
-    border-radius: 10px;
+    object-fit: cover; /* Asegura que la imagen ocupe todo el cuadro */
+    transition: transform 0.3s ease;
+    border-radius: 15px; /* La imagen también debe tener bordes redondeados */
 }
 
-/* Efecto al pasar el mouse por encima: giro */
+/* Efecto hover para ocultar el texto y agrandar la imagen */
 .categoria:hover .front {
-    transform: rotateY(180deg); /* Girar la parte frontal */
+    opacity: 0;
 }
 
-.categoria:hover .back {
-    transform: rotateY(360deg); /* Mostrar la parte trasera con la imagen */
+.categoria:hover .back img {
+    transform: scale(0.9);
 }
+
+
 
 /* Adaptación para pantallas más pequeñas */
 @media (max-width: 768px) {
     .categoria {
-        width: calc(50% - 10px); /* En pantallas pequeñas, mostrar 2 cuadros por fila */
+        width: calc(50% - 10px);
+    }
+
+    .oferta {
+        width: calc(50% - 10px);
     }
 }
+
 /* Estilos para los botones Locales y Comprar vía */
 .info-buttons {
     display: flex;
@@ -244,59 +313,28 @@ header {
     background-color: darkred;
 }
 
-/* Margen general para los laterales (excepto la franja roja) */
-.container {
-    margin: 0 20px; /* Márgenes laterales */
-}
-/* Estilos para la sección de productos de la categoría */
-.productos-categoria {
-    background-color: #f5f5f5; /* Color de fondo claro para diferenciar la sección */
-    padding: 20px;
-    margin: 20px 0;
+/* Botón en el logo */
+#logo {
+    cursor: pointer;
 }
 
-.productos-categoria h2 {
-    text-align: center;
-    margin-bottom: 20px;
+/* Ajustar las imágenes de las ofertas */
+.oferta img {
+    width: 100%;
+    height: 200px; /* Mantener una altura fija */
+    object-fit: cover;
 }
 
-/* Contenedor de productos */
-.productos-container {
+/* Asegurar que el carrusel ocupe el 100% del contenedor */
+.ofertas-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-}
-
-/* Estilo para cada producto */
-.producto {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    width: calc(20% - 10px); /* Ajusta el ancho para que haya 5 productos por fila */
-    box-sizing: border-box;
-    text-align: center;
-    padding: 10px;
+    width: 100%;
 }
 
-.producto img {
-    max-width: 100%;
-    height: auto;
-    border-bottom: 1px solid #ddd;
-}
-
-.producto h3 {
-    margin: 10px 0 0;
-    font-size: 1em;
-    color: #333;
-}
-/* Ajustes para pantallas pequeñas */
-@media (max-width: 768px) {
-    .oferta {
-        width: calc(50% - 10px); /* Mostrar 2 cuadros por fila en pantallas pequeñas */
-    }
+.ofertas {
+    display: flex;
+    transition: transform 0.5s ease;
 }
 
 .producto h3 {
