@@ -3,172 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Supermercado Online</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Productos de Alimentos</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Asegúrate de tener el CSS correcto -->
 </head>
 <body>
     <header>
-        <div id="logo">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfrqrRCGhINF8KLMb-8_fFMAIfi2vsU1JjrQ&s" alt="Logo Supermercado">
+        <div id="Logo">
+            <a href="carritolleno.html"> <!-- Volver a la página principal desde alimento.html -->
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfrqrRCGhINF8KLMb-8_fFMAIfi2vsU1JjrQ&s" alt="Logo del Supermercado" class="logo">
+            </a>
+        </div>        
+        <div id="buscador">
+            <input type="text" placeholder="Buscar productos...">
+            <button>Buscar</button>
         </div>
-    <div id="buscador">
-        <input type="text" placeholder="Buscar productos...">
-        <button>Buscar</button>
-    </div>
-    <div class="info-buttons">
-        <button class="button-locales">
-            <img src="https://cdn.icon-icons.com/icons2/622/PNG/512/facebook-placeholder-for-locate-places-on-maps_icon-icons.com_57151.png" alt="Ubicación"> Locales
-        </button>
-        
-        <button class="button-comprar">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="WhatsApp"> Comprar vía
-        </button>
-    </div>
-</header>
+        <div class="info-buttons">
+            <a href="#" class="button-locales"><img src="https://cdn.icon-icons.com/icons2/622/PNG/512/facebook-placeholder-for-locate-places-on-maps_icon-icons.com_57151.png" alt="Locales">Locales</a>
+            <a href="#" class="button-comprar"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="Comprar vía">Comprar vía</a>
+        </div>
+    </header>
 
-<div class="container">
-    <div id="franja-ofertas">
-        <h2>Ofertas del momento</h2>
-    </div>
-</div>
-
-<!-- Carrusel de ofertas -->
-<div class="container">
-    <section id="carrusel-ofertas">
-        <button class="flecha" id="flecha-izquierda">&#9664;</button> <!-- Flecha izquierda -->
-        <div class="ofertas-container">
-            <div class="ofertas">
-            <div class="oferta">
-                <img src="Images/oferta nutrileche.jpg" alt="Oferta 1">
-                <h3>Producto 1</h3>
-                <p>$10.00</p>
+    <div class="productos-categoria">
+        <h2>Alimentos</h2>
+        <div class="productos-container">
+            <!-- Agrega los productos aquí -->
+            <div class="producto">
+                <img src="https://www.supermercadosantamaria.com/documents/10180/10504/87989_M.jpg" alt="Sal Cris-Sal 1Kg">
+                <h3>Sal Cris-Sal 1Kg</h3>
+                <p>$0.50</p>
             </div>
-            <div class="oferta">
-                <img src="Images/aceitegirasol.png" alt="Oferta 2">
-                <h3>Producto 2</h3>
-                <p>$15.00</p>
+            <div class="producto">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTry5dBLummwMgtRv00vqPNDdu7NW7Nc2oj9w&s" alt="Sal Cris-Sal 2Kg">
+                <h3>Sal Cris-Sal 2Kg</h3>
+                <p>$0.83</p>
             </div>
-            <div class="oferta">
-                <img src="Images/papelfamiliajumbo.png" alt="Oferta 3">
-                <h3>Producto 3</h3>
-                <p>$20.00</p>
+            <!-- Más productos -->
+            <div class="producto">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTry5dBLummwMgtRv00vqPNDdu7NW7Nc2oj9w&s" alt="Sal Cris-Sal 2Kg">
+                <h3>Sal Cris-Sal 2Kg</h3>
+                <p>$0.83</p>
             </div>
-            <div class="oferta">
-                <img src="Images/six-pack-cerveza-corona-extra-355ml-normal.jpeg" alt="Oferta 4">
-                <h3>Producto 4</h3>
-                <p>$25.00</p>
+            <div class="producto">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTry5dBLummwMgtRv00vqPNDdu7NW7Nc2oj9w&s" alt="Sal Cris-Sal 2Kg">
+                <h3>Sal Cris-Sal 2Kg</h3>
+                <p>$0.83</p>
             </div>
-            <div class="oferta">
-                <img src="Images/colgate.png" alt="Oferta 5">
-                <h3>Producto 5</h3>
-                <p>$30.00</p>
+            <div class="producto">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTry5dBLummwMgtRv00vqPNDdu7NW7Nc2oj9w&s" alt="Sal Cris-Sal 2Kg">
+                <h3>Sal Cris-Sal 2Kg</h3>
+                <p>$0.83</p>
             </div>
-            <div class="oferta">
-                <img src="oferta6.jpg" alt="Oferta 6">
-                <h3>Producto 6</h3>
-                <p>$35.00</p>
+            <div class="producto">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTry5dBLummwMgtRv00vqPNDdu7NW7Nc2oj9w&s" alt="Sal Cris-Sal 2Kg">
+                <h3>Sal Cris-Sal 2Kg</h3>
+                <p>$0.83</p>
+            </div>
+            <div class="producto">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTry5dBLummwMgtRv00vqPNDdu7NW7Nc2oj9w&s" alt="Sal Cris-Sal 2Kg">
+                <h3>Sal Cris-Sal 2Kg</h3>
+                <p>$0.83</p>
+            </div>
+            <div class="producto">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTry5dBLummwMgtRv00vqPNDdu7NW7Nc2oj9w&s" alt="Sal Cris-Sal 2Kg">
+                <h3>Sal Cris-Sal 2Kg</h3>
+                <p>$0.83</p>
             </div>
         </div>
-        <button class="flecha" id="flecha-derecha">&#9654;</button> <!-- Flecha derecha -->
-    </section>
-</div>
-
-<div class="container">
-    <div id="franja-categorias">
-        <h2>Categorías</h2>
     </div>
-</div>
 
-<div class="container">
-    <div class="categorias-container">
-    <!-- Enlace a la página de productos de Alimentos -->
-    <a href="alimentos.html" class="categoria">
-        <div class="front">Alimentos</div>
-        <div class="back">
-            <img src="Images/alimentos.png" alt="Alimentos">
-        </div>
-    </a>
+    <footer>
+        <!-- Aquí puedes agregar el pie de página -->
+    </footer>
     
-
-    <a href="#confites" class="categoria">
-        <div class="front">Confites</div>
-        <div class="back">
-            <img src="Images/confites.png" alt="Confites">
-        </div>
-    </a>
-    <a href="#congelados" class="categoria">
-        <div class="front">Congelados</div>
-        <div class="back">
-            <img src="Images/congelados.png" alt="Congelados">
-        </div>
-    </a>
-    <a href="#snacks" class="categoria">
-        <div class="front">Snacks</div>
-        <div class="back">
-            <img src="Images/snacks.png" alt="Snacks">
-        </div>
-    </a>
-    <a href="#limpieza" class="categoria">
-        <div class="front">Limpieza</div>
-        <div class="back">
-            <img src="Images/limpieza.jpg" alt="Limpieza">
-        </div>
-    </a>
-    <a href="#aseo-personal" class="categoria">
-        <div class="front">Aseo Personal</div>
-        <div class="back">
-            <img src="Images/aseo personal.png" alt="Aseo Personal">
-        </div>
-    </a>
-    <a href="#licores" class="categoria">
-        <div class="front">Licores</div>
-        <div class="back">
-            <img src="Images/licores.png" alt="Licores">
-        </div>
-    </a>
-    <a href="#dolarazo" class="categoria">
-        <div class="front">Dolarazo</div>
-        <div class="back">
-            <img src="Images/dolarazo.jpg" alt="Dolarazo">
-        </div>
-    </a>
-</div>
-
-<script>
-function volverAPaginaPrincipal() {
-    const currentUrl = window.location.href;
-    if (currentUrl.includes('alimentos.html')) {
-        window.location.href = 'index.html'; // Redirige a la página principal
-    } else {
-        location.reload(); // Recarga la página si ya estás en la principal
-    }
-}
-</script>
-<!-- Modal para seleccionar local -->
-<div id="modal-locales" class="modal">
-    <div class="modal-content">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfrqrRCGhINF8KLMb-8_fFMAIfi2vsU1JjrQ&s" alt="Logo Supermercado" class="logo-modal">
-        <h3><strong>Selecciona tu local más cercano</strong></h3>
-
-        <!-- Opciones de locales -->
-        <div class="local-option" data-direccion="Matriz - 25 de noviembre, Quito 170133" data-maps="https://maps.app.goo.gl/d3cNz2Yzz4QXhL4Z6">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfrqrRCGhINF8KLMb-8_fFMAIfi2vsU1JjrQ&s" alt="Logo Local">
-            <span>Matriz - 25 de noviembre, Quito 170133</span>
-        </div>
-
-        <div class="local-option" data-direccion="Local 2, Calle Verdadera 456" data-maps="https://goo.gl/maps/ghijkl">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfrqrRCGhINF8KLMb-8_fFMAIfi2vsU1JjrQ&s" alt="Logo Local">
-            <span>Local 2, Calle Verdadera 456</span>
-        </div>
-
-        <!-- Botones de acción -->
-        <div class="modal-buttons">
-            <button id="seleccionar-local">Seleccionar Local</button>
-            <button id="ver-en-maps">Ver en Google Maps</button>
-        </div>
-    </div>
-</div>
-
-<script src="carrusel.js"></script>
 </body>
+
 </html>
