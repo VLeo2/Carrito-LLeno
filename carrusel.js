@@ -77,4 +77,49 @@ function volverAPaginaPrincipal() {
     }
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    const modal = document.getElementById("modal-locales");
+    const buttonLocales = document.querySelector(".button-locales");
+    const localOptions = document.querySelectorAll(".local-option");
+    const seleccionarLocalBtn = document.getElementById("seleccionar-local");
+    const verEnMapsBtn = document.getElementById("ver-en-maps");
+    let direccionSeleccionada = "";
+    let linkMaps = "";
+
+    // Mostrar el modal al hacer clic en el botón de locales
+    buttonLocales.addEventListener("click", function() {
+        modal.classList.add("active");
+    });
+
+    // Seleccionar un local
+    localOptions.forEach(option => {
+        option.addEventListener("click", function() {
+            localOptions.forEach(opt => opt.classList.remove("selected"));
+            option.classList.add("selected");
+            direccionSeleccionada = option.getAttribute("data-direccion");
+            linkMaps = option.getAttribute("data-maps");
+        });
+    });
+
+    // Cambiar el texto del botón de locales y cerrar el modal
+    seleccionarLocalBtn.addEventListener("click", function() {
+        if (direccionSeleccionada) {
+            buttonLocales.innerHTML = `<img src="https://cdn.icon-icons.com/icons2/622/PNG/512/facebook-placeholder-for-locate-places-on-maps_icon-icons.com_57151.png" alt="Ubicación"> ${direccionSeleccionada}`;
+            modal.classList.remove("active");
+        }
+    });
+
+    // Redireccionar a Google Maps
+    verEnMapsBtn.addEventListener("click", function() {
+        if (linkMaps) {
+            window.open(linkMaps, "_blank");
+        }
+    });
+
+    // Por defecto, seleccionar el local matriz
+    const defaultOption = document.querySelector(".local-option");
+    defaultOption.classList.add("selected");
+    direccionSeleccionada = defaultOption.getAttribute("data-direccion");
+    linkMaps = defaultOption.getAttribute("data-maps");
+});
 
