@@ -19,6 +19,7 @@
         <button class="button-locales">
             <img src="https://cdn.icon-icons.com/icons2/622/PNG/512/facebook-placeholder-for-locate-places-on-maps_icon-icons.com_57151.png" alt="Ubicación"> Locales
         </button>
+        
         <button class="button-comprar">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="WhatsApp"> Comprar vía
         </button>
@@ -132,9 +133,6 @@
         </div>
     </a>
 </div>
-<a href="javascript:void(0);" onclick="volverAPaginaPrincipal()">
-    <img src="logo.png" alt="Logo" id="logo">
-</a>
 
 <script>
 function volverAPaginaPrincipal() {
@@ -146,9 +144,31 @@ function volverAPaginaPrincipal() {
     }
 }
 </script>
+<!-- Modal para seleccionar local -->
+<div id="modal-locales" class="modal">
+    <div class="modal-content">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfrqrRCGhINF8KLMb-8_fFMAIfi2vsU1JjrQ&s" alt="Logo Supermercado" class="logo-modal">
+        <h3><strong>Selecciona tu local más cercano</strong></h3>
+
+        <!-- Opciones de locales -->
+        <div class="local-option" data-direccion="Matriz - 25 de noviembre, Quito 170133" data-maps="https://maps.app.goo.gl/d3cNz2Yzz4QXhL4Z6">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfrqrRCGhINF8KLMb-8_fFMAIfi2vsU1JjrQ&s" alt="Logo Local">
+            <span>Matriz - 25 de noviembre, Quito 170133</span>
+        </div>
+
+        <div class="local-option" data-direccion="Local 2, Calle Verdadera 456" data-maps="https://goo.gl/maps/ghijkl">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfrqrRCGhINF8KLMb-8_fFMAIfi2vsU1JjrQ&s" alt="Logo Local">
+            <span>Local 2, Calle Verdadera 456</span>
+        </div>
+
+        <!-- Botones de acción -->
+        <div class="modal-buttons">
+            <button id="seleccionar-local">Seleccionar Local</button>
+            <button id="ver-en-maps">Ver en Google Maps</button>
+        </div>
+    </div>
+</div>
 
 <script src="carrusel.js"></script>
 </body>
 </html>
-
-
