@@ -18,8 +18,13 @@
             <button>Buscar</button>
         </div>
         <div class="info-buttons">
-            <a href="#" class="button-locales"><img src="https://cdn.icon-icons.com/icons2/622/PNG/512/facebook-placeholder-for-locate-places-on-maps_icon-icons.com_57151.png" alt="Locales">Locales</a>
-            <a href="#" class="button-comprar"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="Comprar vía">Comprar vía</a>
+            <button class="button-locales">
+                <img src="https://cdn.icon-icons.com/icons2/622/PNG/512/facebook-placeholder-for-locate-places-on-maps_icon-icons.com_57151.png" alt="Ubicación"> Locales
+            </button>
+            
+            <button class="button-comprar">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="WhatsApp"> Comprar vía
+            </button>
         </div>
     </header>
 
@@ -101,5 +106,138 @@
     </footer>
     
 </body>
+
+<!-- Modal para seleccionar local -->
+<div id="modal-locales" class="modal">
+    <div class="modal-content">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfrqrRCGhINF8KLMb-8_fFMAIfi2vsU1JjrQ&s" alt="Logo Supermercado" class="logo-modal">
+        <h3><strong>Selecciona tu local más cercano</strong></h3>
+
+        <!-- Opciones de locales -->
+        <div class="local-option" data-direccion="Matriz - 25 de noviembre, Quito 170133" data-maps="https://maps.app.goo.gl/d3cNz2Yzz4QXhL4Z6">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfrqrRCGhINF8KLMb-8_fFMAIfi2vsU1JjrQ&s" alt="Logo Local">
+            <span>Matriz - 25 de noviembre, Quito 170133</span>
+        </div>
+
+        <div class="local-option" data-direccion="Local 2, Calle Verdadera 456" data-maps="https://goo.gl/maps/ghijkl">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfrqrRCGhINF8KLMb-8_fFMAIfi2vsU1JjrQ&s" alt="Logo Local">
+            <span>Local 2, Calle Verdadera 456</span>
+        </div>
+
+        <!-- Botones de acción -->
+        <div class="modal-buttons">
+            <button id="seleccionar-local">Seleccionar Local</button>
+            <button id="ver-en-maps">Ver en Google Maps</button>
+        </div>
+    </div>
+</div>
+//Todo lo de abajo es para el boton de locales
+<!-- Modal para seleccionar local -->
+<div id="modal-locales" class="modal">
+    <div class="modal-content">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfrqrRCGhINF8KLMb-8_fFMAIfi2vsU1JjrQ&s" alt="Logo Supermercado" class="logo-modal">
+        <h3><strong>Selecciona tu local más cercano</strong></h3>
+
+        <!-- Opciones de locales -->
+        <div class="local-option" data-direccion="Matriz - 25 de noviembre, Quito 170133" data-maps="https://maps.app.goo.gl/d3cNz2Yzz4QXhL4Z6">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfrqrRCGhINF8KLMb-8_fFMAIfi2vsU1JjrQ&s" alt="Logo Local">
+            <span>Matriz - 25 de noviembre, Quito 170133</span>
+        </div>
+
+        <div class="local-option" data-direccion="Local 2, Calle Verdadera 456" data-maps="https://goo.gl/maps/ghijkl">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfrqrRCGhINF8KLMb-8_fFMAIfi2vsU1JjrQ&s" alt="Logo Local">
+            <span>Local 2, Calle Verdadera 456</span>
+        </div>
+
+        <!-- Botones de acción -->
+        <div class="modal-buttons">
+            <button id="seleccionar-local">Seleccionar Local</button>
+            <button id="ver-en-maps">Ver en Google Maps</button>
+        </div>
+    </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const modal = document.getElementById("modal-locales");
+    const buttonLocales = document.querySelector(".button-locales");
+    const localOptions = document.querySelectorAll(".local-option");
+    const seleccionarLocalBtn = document.getElementById("seleccionar-local");
+    const verEnMapsBtn = document.getElementById("ver-en-maps");
+    let direccionSeleccionada = "";
+    let linkMaps = "";
+
+    // Mostrar el modal al hacer clic en el botón de locales
+    buttonLocales.addEventListener("click", function() {
+        modal.classList.add("active");
+    });
+
+    // Seleccionar un local
+    localOptions.forEach(option => {
+        option.addEventListener("click", function() {
+            localOptions.forEach(opt => opt.classList.remove("selected"));
+            option.classList.add("selected");
+            direccionSeleccionada = option.getAttribute("data-direccion");
+            linkMaps = option.getAttribute("data-maps");
+        });
+    });
+
+    // Cambiar el texto del botón de locales y cerrar el modal
+    seleccionarLocalBtn.addEventListener("click", function() {
+        if (direccionSeleccionada) {
+            buttonLocales.innerHTML = `<img src="https://cdn.icon-icons.com/icons2/622/PNG/512/facebook-placeholder-for-locate-places-on-maps_icon-icons.com_57151.png" alt="Ubicación"> ${direccionSeleccionada}`;
+            modal.classList.remove("active");
+        }
+    });
+
+    // Redireccionar a Google Maps
+    verEnMapsBtn.addEventListener("click", function() {
+        if (linkMaps) {
+            window.open(linkMaps, "_blank");
+        }
+    });
+
+    // Por defecto, seleccionar el local matriz
+    const defaultOption = document.querySelector(".local-option");
+    defaultOption.classList.add("selected");
+    direccionSeleccionada = defaultOption.getAttribute("data-direccion");
+    linkMaps = defaultOption.getAttribute("data-maps");
+});
+// Abrir y cerrar el modal
+document.querySelector('.button-locales').addEventListener('click', function() {
+    document.getElementById('modal-locales').classList.add('active');
+});
+
+document.getElementById('modal-locales').addEventListener('click', function(event) {
+    if (event.target === this) {
+        this.classList.remove('active');
+    }
+});
+
+// Seleccionar un local
+let localSeleccionado = null;
+document.querySelectorAll('.local-option').forEach(function(option) {
+    option.addEventListener('click', function() {
+        document.querySelectorAll('.local-option').forEach(o => o.classList.remove('selected'));
+        this.classList.add('selected');
+        localSeleccionado = {
+            direccion: this.getAttribute('data-direccion'),
+            maps: this.getAttribute('data-maps')
+        };
+    });
+});
+
+document.getElementById('seleccionar-local').addEventListener('click', function() {
+    if (localSeleccionado) {
+        document.querySelector('.button-locales').innerHTML = `<img src="https://cdn.icon-icons.com/icons2/622/PNG/512/facebook-placeholder-for-locate-places-on-maps_icon-icons.com_57151.png" alt="Locales"> ${localSeleccionado.direccion}`;
+        document.getElementById('modal-locales').classList.remove('active');
+    }
+});
+
+document.getElementById('ver-en-maps').addEventListener('click', function() {
+    if (localSeleccionado) {
+        window.open(localSeleccionado.maps, '_blank');
+    }
+});
+</script>
 
 </html>
